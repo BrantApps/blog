@@ -31,7 +31,7 @@ const sections = [
 ]
 
 const mainFeaturedPost = {
-  title: "OceanLife, a love letter",
+  title: "OceanLife, a love letter 💚",
   date: "October 2011",
   description:
     "Read this multi-part entry on how one of my side projects ended up reaching 10 years old & changing my life...",
