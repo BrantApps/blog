@@ -1,10 +1,10 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import { SocialLink, Archive } from "../types/types";
+import React from "react"
+import {makeStyles} from "@material-ui/core/styles"
+import Grid from "@material-ui/core/Grid"
+import Paper from "@material-ui/core/Paper"
+import Typography from "@material-ui/core/Typography"
+import Link from "@material-ui/core/Link"
+import {SocialLink, Archive} from "../types/types"
 
 const useStyles = makeStyles((theme) => ({
   sidebarAboutBox: {
@@ -14,18 +14,18 @@ const useStyles = makeStyles((theme) => ({
   sidebarSection: {
     marginTop: theme.spacing(3),
   },
-}));
+}))
 
 interface Props {
-  archives: Array<Archive>;
-  description: string;
-  social: Array<SocialLink>;
-  title: string;
+  archives: Array<Archive>
+  description: string
+  social: Array<SocialLink>
+  title: string
 }
 
 export default function Sidebar(props: Props) {
-  const classes = useStyles();
-  const { archives, description, social, title } = props;
+  const classes = useStyles()
+  const {archives, description, social, title} = props
 
   return (
     <Grid item xs={12} md={4}>
@@ -67,5 +67,5 @@ export default function Sidebar(props: Props) {
         </Link>
       ))}
     </Grid>
-  );
+  )
 }

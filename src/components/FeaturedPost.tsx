@@ -1,13 +1,13 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Hidden from "@material-ui/core/Hidden";
-import { PostSummary } from "../types/types";
+import React from "react"
+import {makeStyles} from "@material-ui/core/styles"
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
+import Card from "@material-ui/core/Card"
+import CardActionArea from "@material-ui/core/CardActionArea"
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
+import Hidden from "@material-ui/core/Hidden"
+import {PostSummary} from "../types/types"
 
 const useStyles = makeStyles({
   card: {
@@ -19,15 +19,15 @@ const useStyles = makeStyles({
   cardMedia: {
     width: 160,
   },
-});
+})
 
 interface Props {
-  post: PostSummary;
+  post: PostSummary
 }
 
 export default function FeaturedPost(props: Props) {
-  const classes = useStyles();
-  const { post } = props;
+  const classes = useStyles()
+  const {post} = props
 
   return (
     <Grid item xs={12} md={6}>
@@ -59,5 +59,5 @@ export default function FeaturedPost(props: Props) {
         </Card>
       </CardActionArea>
     </Grid>
-  );
+  )
 }

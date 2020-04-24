@@ -1,0 +1,57 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-react",
+    "tslint-react-hooks",
+    "tslint-react-native"
+  ],
+  "rulesDirectory": "node_modules/tslint-microsoft-contrib",
+  "rules": {
+    "mocha-avoid-only": true,
+    "array-type": false,
+    "no-empty": false,
+    "jsdoc-format": false,
+    "no-console": {"severity": "warning"},
+    "variable-name": false,
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-unused-expression": false,
+    "only-arrow-functions": false,
+    "no-var-requires": false,
+    "no-any": true,
+    "max-classes-per-file": false,
+    "interface-over-type-literal": false,
+    "no-empty-interface": false,
+    "no-unused-styles": true,
+    "import-blacklist": {
+      "severity": "error",
+      "options": [
+        {
+          "react-apollo": ["compose", "graphql"]
+        },
+        "styled-components",
+        "react-native-static-safe-area-insets",
+        {
+          "react-native": ["ActivityIndicator"]
+        }
+      ]
+    },
+
+    "jsx-use-translation-function": {
+      "severity": "warning",
+      "options": ["allow-punctuation"]
+    },
+
+    "react-hooks-nesting": "error",
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "jsx-boolean-value": false,
+    "jsx-curly-spacing": false,
+    "jsx-wrap-multiline": false,
+    "jsx-alignment": false,
+    "no-floating-promises": {"severity": "warning"}
+  }
+}

@@ -10,6 +10,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "markdown-to-jsx": "^6.11.1",
+    "prettier": "^2.0.5",
     "raw.macro": "^0.3.0",
     "react": "latest",
     "react-dom": "latest",
@@ -17,6 +18,8 @@
     "typescript": "latest"
   },
   "scripts": {
+    "fix-formatting-all": "./node_modules/.bin/prettier '**/*.js' --write",
+    "fix-formatting": "./node_modules/.bin/prettier $(git status --porcelain | sed 's/^...//' | grep -E '\\.js') --write",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

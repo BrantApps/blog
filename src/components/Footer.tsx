@@ -1,8 +1,8 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import React from "react"
+import {makeStyles} from "@material-ui/core/styles"
+import Container from "@material-ui/core/Container"
+import Typography from "@material-ui/core/Typography"
+import Link from "@material-ui/core/Link"
 
 function Copyright() {
   return (
@@ -14,7 +14,7 @@ function Copyright() {
       {new Date().getFullYear()}
       {"."}
     </Typography>
-  );
+  )
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -23,16 +23,16 @@ const useStyles = makeStyles((theme) => ({
     // marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
   },
-}));
+}))
 
 interface Props {
-  description: string;
-  title: string;
+  description: string
+  title: string
 }
 
 export default function Footer(props: Props) {
-  const classes = useStyles();
-  const { description, title } = props;
+  const classes = useStyles()
+  const {description, title} = props
 
   return (
     <footer className={classes.footer}>
@@ -51,5 +51,5 @@ export default function Footer(props: Props) {
         <Copyright />
       </Container>
     </footer>
-  );
+  )
 }

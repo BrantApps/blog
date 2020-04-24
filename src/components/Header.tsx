@@ -1,9 +1,9 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import { Section } from "../types/types";
+import React from "react"
+import {makeStyles} from "@material-ui/core/styles"
+import Toolbar from "@material-ui/core/Toolbar"
+import Typography from "@material-ui/core/Typography"
+import Link from "@material-ui/core/Link"
+import {Section} from "../types/types"
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -20,15 +20,15 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     flexShrink: 0,
   },
-}));
+}))
 
 interface Props {
-  sections: Array<Section>;
-  title: string;
+  sections: Array<Section>
+  title: string
 }
 export default function Header(props: Props) {
-  const classes = useStyles();
-  const { sections, title } = props;
+  const classes = useStyles()
+  const {sections, title} = props
 
   return (
     <React.Fragment>
@@ -63,5 +63,5 @@ export default function Header(props: Props) {
         ))}
       </Toolbar>
     </React.Fragment>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import React from "react";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-import Blog from "./components/Blog";
-import Footer from "./components/Footer";
+import React from "react"
+import Container from "@material-ui/core/Container"
+import Box from "@material-ui/core/Box"
+import Blog from "./components/Blog"
+import Footer from "./components/Footer"
 
 export default function App() {
   return (
@@ -12,5 +12,5 @@ export default function App() {
         <Footer title="Tech, Teams & Tea" description="" />
       </Box>
     </Container>
-  );
+  )
 }

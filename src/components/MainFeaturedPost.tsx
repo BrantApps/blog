@@ -1,10 +1,10 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
-import { PostSummary } from "../types/types";
+import React from "react"
+import {makeStyles} from "@material-ui/core/styles"
+import Paper from "@material-ui/core/Paper"
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
+import Link from "@material-ui/core/Link"
+import {PostSummary} from "../types/types"
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -33,29 +33,23 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: 0,
     },
   },
-}));
+}))
 
 interface Props {
-  post: PostSummary;
+  post: PostSummary
 }
 
 export default function MainFeaturedPost(props: Props) {
-  const classes = useStyles();
-  const { post } = props;
+  const classes = useStyles()
+  const {post} = props
 
   return (
     <Paper
       className={classes.mainFeaturedPost}
-      style={{ backgroundImage: `url(${post.image})` }}
+      style={{backgroundImage: `url(${post.image})`}}
     >
       {/* Increase the priority of the hero background image */}
-      {
-        <img
-          style={{ display: "none" }}
-          src={post.image}
-          alt={post.imageText}
-        />
-      }
+      {<img style={{display: "none"}} src={post.image} alt={post.imageText} />}
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>
@@ -78,5 +72,5 @@ export default function MainFeaturedPost(props: Props) {
         </Grid>
       </Grid>
     </Paper>
-  );
+  )
 }
