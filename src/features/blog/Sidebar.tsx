@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
-import {SocialLink, Archive} from "../types/types"
+import {SocialLink, Archive} from "./types"
 
 const useStyles = makeStyles((theme) => ({
   sidebarAboutBox: {

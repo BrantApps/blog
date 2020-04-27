@@ -7,28 +7,17 @@ import Container from "@material-ui/core/Container"
 import GitHubIcon from "@material-ui/icons/GitHub"
 import TwitterIcon from "@material-ui/icons/Twitter"
 import StackOverflowIcon from "@material-ui/icons/HorizontalSplit"
-import Header from "./Header"
 import MainFeaturedPost from "./MainFeaturedPost"
 import FeaturedPost from "./FeaturedPost"
 import Main from "./Main"
 import Sidebar from "./Sidebar"
 
-const latestPost = raw("../posts/2018/passed-qa.md")
+const latestPost = raw("../posts/markdown/passed-qa.md")
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
   },
 }))
-
-const sections = [
-  {title: "", url: "#"},
-  {title: "", url: "#"},
-  {title: "Posts", url: "#"},
-  {title: "Talks", url: "#"},
-  {title: "Portfolio", url: "#"},
-  {title: "", url: "#"},
-  {title: "", url: "#"},
-]
 
 const mainFeaturedPost = {
   title: "OceanLife, a love letter 💚",
@@ -93,7 +82,6 @@ export default function Blog() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Branton's Yak" sections={sections} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>

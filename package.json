@@ -6,15 +6,23 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
+    "@microlink/react": "^5.1.5",
     "@types/markdown-to-jsx": "^6.11.0",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/react-vertical-timeline-component": "^2.5.0",
+    "dayjs": "^1.8.25",
+    "history": "^4.10.1",
     "markdown-to-jsx": "^6.11.1",
     "prettier": "^2.0.5",
     "raw.macro": "^0.3.0",
     "react": "latest",
     "react-dom": "latest",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "latest",
+    "react-vertical-timeline-component": "^2.6.0",
+    "styled-components": "^5.1.0",
     "typescript": "latest"
   },
   "scripts": {

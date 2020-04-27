@@ -1,16 +1,28 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
-import Blog from "./components/Blog"
-import Footer from "./components/Footer"
+import Footer from "./features/blog/Footer"
+import Routes from "./routes/Routes"
+import {Router} from "react-router-dom"
+import history from "./routes/history"
+import Header from "./features/blog/Header"
+
+const sections = [
+  {title: "Posts", url: "/"},
+  {title: "Talks", url: "/talks"},
+  {title: "Portfolio", url: "/portfolio"},
+]
 
 export default function App() {
   return (
-    <Container>
-      <Box my={4}>
-        <Blog />
-        <Footer title="Tech, Teams & Tea" description="" />
-      </Box>
-    </Container>
+    <Router history={history}>
+      <Container>
+        <Box my={4}>
+          <Header title="Branton's Yak" sections={sections} />
+          <Routes />
+          <Footer title="Tech, Teams & Tea" description="" />
+        </Box>
+      </Container>
+    </Router>
   )
 }
