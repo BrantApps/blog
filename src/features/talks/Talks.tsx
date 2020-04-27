@@ -51,7 +51,7 @@ export default function Talks() {
       <Container maxWidth="lg">
         <main>
           <VerticalTimeline>
-            {sortedTalks.map((talk) => (
+            {sortedTalks.map((talk, index) => (
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 contentStyle={{color: "black"}}
@@ -61,6 +61,7 @@ export default function Talks() {
                 date={dayjs(talk.date).format("MMMM, YYYY")}
                 iconStyle={{background: "rgb(33, 150, 243)", color: "#fff"}}
                 icon={<VoiceIcon />}
+                key={talk.date.toISOString() + index}
               >
                 <h3 className="vertical-timeline-element-title">
                   {talk.title}

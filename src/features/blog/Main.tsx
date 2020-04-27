@@ -19,7 +19,6 @@ interface Props {
 export default function Main(props: Props) {
   const classes = useStyles()
   const {posts, title} = props
-  posts.map((post) => console.log(post))
 
   return (
     <Grid item xs={12} md={8}>

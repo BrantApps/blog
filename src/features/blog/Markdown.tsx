@@ -4,11 +4,7 @@ import {withStyles, Theme} from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
 
-const styles = (theme: Theme) => ({
-  listItem: {
-    marginTop: theme.spacing(1),
-  },
-})
+const styles = (_: Theme) => ({})
 
 const options = {
   overrides: {

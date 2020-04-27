@@ -14,7 +14,7 @@ export type SocialLink = {
 
 export type Section = {
   title: string
-  url: string
+  path: string
 }
 
 export type Archive = {

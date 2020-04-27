@@ -1,14 +1,25 @@
-import React from "react"
+import React, {FunctionComponent} from "react"
 import {Switch, Route} from "react-router-dom"
-import Blog from "../features/blog/Blog"
-import Talks from "../features/talks/Talks"
+import {RouteComponentProps} from "react-router"
 
-export default function Routes() {
+interface Props {
+  routes: Array<{
+    path: string
+    component: FunctionComponent<RouteComponentProps>
+  }>
+}
+
+export default function Routes(props: Props) {
   return (
     <Switch>
-      <Route path="/blog" exact component={Blog} />
-      <Route path="/blog/talks" exact component={Talks} />
-      <Route path="/blog/portfolio" exact component={Blog} />
+      {props.routes.map((route) => (
+        <Route
+          path={route.path}
+          exact
+          component={route.component}
+          key={route.path}
+        />
+      ))}
     </Switch>
   )
 }
