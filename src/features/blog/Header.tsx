@@ -57,7 +57,7 @@ export default function Header(props: Props) {
             <Tab
               autoCapitalize={"off"}
               label={section.title}
-              href={`${process.env.PUBLIC_URL}${section.path}`}
+              href={section.path}
               key={section.title}
               value={index}
             />

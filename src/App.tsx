@@ -23,7 +23,7 @@ export default function App() {
     <Container>
       <Box my={4}>
         <Header title="Branton's Yak" sections={sections} />
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter>
           <Routes
             routes={sections.map((section) => ({
               path: section.path,
