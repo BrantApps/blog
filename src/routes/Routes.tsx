@@ -6,9 +6,9 @@ import Talks from "../features/talks/Talks"
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/" exact component={Blog} />
-      <Route path="/talks" exact component={Talks} />
-      <Route path="/portfolio" exact component={Blog} />
+      <Route path="/blog" exact component={Blog} />
+      <Route path="/blog/talks" exact component={Talks} />
+      <Route path="/blog/portfolio" exact component={Blog} />
     </Switch>
   )
 }

@@ -8,9 +8,9 @@ import history from "./routes/history"
 import Header from "./features/blog/Header"
 
 const sections = [
-  {title: "Posts", url: "/"},
-  {title: "Talks", url: "/talks"},
-  {title: "Portfolio", url: "/portfolio"},
+  {title: "Posts", url: "/blog"},
+  {title: "Talks", url: "/blog/talks"},
+  {title: "Portfolio", url: "/blog/portfolio"},
 ]
 
 export default function App() {
