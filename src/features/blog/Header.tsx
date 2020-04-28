@@ -45,7 +45,7 @@ export default function Header(props: Props) {
           {title}
         </Typography>
       </Toolbar>
-      <Paper>
+      <Paper style={{marginBottom: 16}} elevation={0}>
         <Tabs
           value={selectedTab}
           onChange={(_, value: number) => setSelectedTab(value)}
