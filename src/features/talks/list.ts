@@ -48,7 +48,7 @@ export const talks: Array<Talk> = [
     location: {
       latitude: 0,
       longitude: 0,
-      description: "Bristol, UK",
+      description: "London, UK",
     },
     date: new Date("2018-03-15"),
     slidesUrl:
@@ -61,7 +61,7 @@ export const talks: Array<Talk> = [
     location: {
       latitude: 0,
       longitude: 0,
-      description: "Bristol, UK",
+      description: "London, UK",
     },
     date: new Date("2018-05-15"),
     slidesUrl:
@@ -112,7 +112,7 @@ export const talks: Array<Talk> = [
     location: {
       latitude: 0,
       longitude: 0,
-      description: "Bristol, UK",
+      description: "Berlin, Germany",
     },
     date: new Date("2019-07-15"),
     slidesUrl:
