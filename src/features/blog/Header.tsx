@@ -60,7 +60,7 @@ export default function Header(props: Props) {
             flex: 1,
             justifyContent: "flex-end",
           }}
-          label="Dark Mode"
+          label={"🌗"}
         />
       </Toolbar>
       <Paper style={{marginBottom: 16}} elevation={0}>
