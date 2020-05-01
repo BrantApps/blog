@@ -3,8 +3,8 @@ import {makeStyles} from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import {Section} from "./types"
-import {Tabs, Tab, Paper} from "@material-ui/core"
-import {useLocalStorage} from "../hooks"
+import {Tabs, Tab, Paper, FormControlLabel, Switch} from "@material-ui/core"
+import {useLocation} from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -22,18 +22,18 @@ const useStyles = makeStyles((theme) => ({
 interface Props {
   sections: Array<Section>
   title: string
+  appliedPaletteType: "dark" | "light"
+  handleThemeSwitch: () => void
 }
 export default function Header(props: Props) {
   const classes = useStyles()
-  const [selectedTab, setSelectedTab] = useLocalStorage<number>(
-    "selectedTab",
-    0,
-  )
+  const location = useLocation()
   const {sections, title} = props
 
   return (
     <React.Fragment>
-      <Toolbar className={classes.toolbar}>
+      <Toolbar className={classes.toolbar} style={{alignItems: "center"}}>
+        <div style={{flex: 1}} />
         <Typography
           component="h2"
           variant="h5"
@@ -41,25 +41,42 @@ export default function Header(props: Props) {
           align="center"
           noWrap
           className={classes.toolbarTitle}
+          style={{
+            flex: 2,
+          }}
         >
           {title}
         </Typography>
+        <FormControlLabel
+          control={
+            <Switch
+              checked={props.appliedPaletteType === "dark"}
+              onChange={props.handleThemeSwitch}
+              name="darkmode"
+              color="primary"
+            />
+          }
+          style={{
+            flex: 1,
+            justifyContent: "flex-end",
+          }}
+          label="Dark Mode"
+        />
       </Toolbar>
       <Paper style={{marginBottom: 16}} elevation={0}>
         <Tabs
-          value={selectedTab}
-          onChange={(_, value: number) => setSelectedTab(value)}
+          value={location.pathname}
           indicatorColor="primary"
           textColor="primary"
           centered
         >
-          {sections.map((section, index) => (
+          {sections.map((section) => (
             <Tab
               autoCapitalize={"off"}
               label={section.title}
               href={`${process.env.PUBLIC_URL}${section.path}`}
               key={section.title}
-              value={index}
+              value={section.path}
             />
           ))}
         </Tabs>

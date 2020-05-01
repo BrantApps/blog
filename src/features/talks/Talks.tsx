@@ -1,7 +1,7 @@
 import React from "react"
 import dayjs from "dayjs"
 import Microlink from "@microlink/react"
-import {CssBaseline, Container, makeStyles} from "@material-ui/core"
+import {CssBaseline, Container, makeStyles, Typography} from "@material-ui/core"
 import VoiceIcon from "@material-ui/icons/RecordVoiceOver"
 import {
   VerticalTimeline,
@@ -10,6 +10,7 @@ import {
 import "react-vertical-timeline-component/style.min.css"
 import {talks} from "./list"
 import {Talk} from "./types"
+import theme from "../../theme"
 
 const useStyles = makeStyles((theme) => ({
   toolbarTitle: {
@@ -59,16 +60,25 @@ export default function Talks() {
                   borderRight: "7px solid black",
                 }}
                 date={dayjs(talk.date).format("MMMM, YYYY")}
-                iconStyle={{background: "rgb(33, 150, 243)", color: "#fff"}}
+                iconStyle={{
+                  background: theme.palette.primary.dark,
+                  color: "#fff",
+                }}
                 icon={<VoiceIcon />}
                 key={talk.date.toISOString() + index}
               >
-                <h3 className="vertical-timeline-element-title">
+                <Typography
+                  variant="h5"
+                  className="vertical-timeline-element-title"
+                >
                   {talk.title}
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle">
+                </Typography>
+                <Typography
+                  variant="h6"
+                  className="vertical-timeline-element-subtitle"
+                >
                   {talk.location.description}
-                </h4>
+                </Typography>
                 <p />
                 {talk.video && talk.video.useVimeoWidget ? (
                   <div className={classes.responsiveContainer}>
@@ -90,7 +100,10 @@ export default function Talks() {
                   url={talk.slidesUrl}
                   size={talk.video?.url ? null : "large"}
                 />
-                <p>{talk.shortDescription}</p>
+                <p />
+                <Typography variant="subtitle1">
+                  {talk.shortDescription}
+                </Typography>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
