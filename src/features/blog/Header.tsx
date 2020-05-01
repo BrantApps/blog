@@ -63,24 +63,23 @@ export default function Header(props: Props) {
           label={"🌗"}
         />
       </Toolbar>
-      <Paper style={{marginBottom: 16}} elevation={0}>
-        <Tabs
-          value={location.pathname}
-          indicatorColor="primary"
-          textColor="primary"
-          centered
-        >
-          {sections.map((section) => (
-            <Tab
-              autoCapitalize={"off"}
-              label={section.title}
-              href={`${process.env.PUBLIC_URL}${section.path}`}
-              key={section.title}
-              value={section.path}
-            />
-          ))}
-        </Tabs>
-      </Paper>
+      <Tabs
+        value={location.pathname}
+        indicatorColor="primary"
+        textColor="primary"
+        variant="fullWidth"
+        centered
+        style={{paddingBottom: 16}}
+      >
+        {sections.map((section) => (
+          <Tab
+            label={section.title}
+            href={`${process.env.PUBLIC_URL}${section.path}`}
+            key={section.title}
+            value={section.path}
+          />
+        ))}
+      </Tabs>
     </React.Fragment>
   )
 }
