@@ -12,7 +12,7 @@ import {talks} from "./list"
 import {Talk} from "./types"
 import theme from "../../theme"
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   toolbarTitle: {
     flex: 1,
   },

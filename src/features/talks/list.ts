@@ -4,8 +4,8 @@ export const talks: Array<Talk> = [
   {
     title: "Modular Architecture",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 51.4545,
+      longitude: -2.5879,
       description: "Bristol, UK",
     },
     date: new Date("2017-01-15"),
@@ -17,8 +17,8 @@ export const talks: Array<Talk> = [
   {
     title: "Building Android with Docker",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 51.4545,
+      longitude: -2.5879,
       description: "Bristol, UK",
     },
     date: new Date("2017-03-15"),
@@ -30,8 +30,8 @@ export const talks: Array<Talk> = [
   {
     title: "Work Hard, Play Hard?",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 51.4545,
+      longitude: -2.5879,
       description: "Bristol, UK",
     },
     date: new Date("2018-02-15"),
@@ -46,8 +46,8 @@ export const talks: Array<Talk> = [
   {
     title: "Firebase Performance",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 51.5074,
+      longitude: 0.1278,
       description: "London, UK",
     },
     date: new Date("2018-03-15"),
@@ -59,8 +59,8 @@ export const talks: Array<Talk> = [
   {
     title: "TeamCity Kotlin DSL",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 51.5074,
+      longitude: 0.1278,
       description: "London, UK",
     },
     date: new Date("2018-05-15"),
@@ -72,8 +72,8 @@ export const talks: Array<Talk> = [
   {
     title: "Wellbeing - Notes from Google I/O",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 51.4545,
+      longitude: -2.5879,
       description: "Bristol, UK",
     },
     date: new Date("2018-06-15"),
@@ -85,8 +85,8 @@ export const talks: Array<Talk> = [
   {
     title: "Chaos Mode: A foray into fuzz",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 51.4545,
+      longitude: -2.5879,
       description: "Bristol, UK",
     },
     date: new Date("2018-11-15"),
@@ -98,8 +98,8 @@ export const talks: Array<Talk> = [
   {
     title: "Instant Apps - Ytho?",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 51.4545,
+      longitude: -2.5879,
       description: "Bristol, UK",
     },
     date: new Date("2019-03-15"),
@@ -110,8 +110,8 @@ export const talks: Array<Talk> = [
   {
     title: "Android... without Google",
     location: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 52.52,
+      longitude: 13.405,
       description: "Berlin, Germany",
     },
     date: new Date("2019-07-15"),

@@ -13,15 +13,12 @@ import {
   createMuiTheme,
   Theme,
 } from "@material-ui/core"
+import About from "./features/about/About"
 
 const sections = [
   {title: "Posts", component: Blog, path: "/"},
   {title: "Talks", component: Talks, path: "/talks"},
-  {
-    title: "Portfolio",
-    component: Blog,
-    path: "/portfolio",
-  },
+  {title: "About", component: About, path: "/about"},
 ]
 
 const defaultBlogThemeObject = {
