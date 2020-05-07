@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography"
 import {Section} from "./types"
 import {Tabs, Tab, FormControlLabel, Switch} from "@material-ui/core"
 import {useLocation} from "react-router-dom"
+import theme from "../../theme"
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -69,7 +70,11 @@ export default function Header(props: Props) {
         textColor="primary"
         variant="fullWidth"
         centered
-        style={{paddingBottom: 16}}
+        style={{
+          paddingBottom: theme.spacing(2),
+          paddingLeft: theme.spacing(3),
+          paddingRight: theme.spacing(3),
+        }}
       >
         {sections.map((section) => (
           <Tab
