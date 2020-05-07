@@ -1,4 +1,18 @@
-import {Job} from "./types"
+export interface Job {
+  from: Date
+  to: Date
+  company: {
+    name: string
+    url: string
+  }
+  location: {
+    latitude: number
+    longitude: number
+    description: string
+  }
+  title: string
+  responsibilities?: string
+}
 
 export const jobs: Array<Job> = [
   {
@@ -14,7 +28,7 @@ export const jobs: Array<Job> = [
       description: "Bristol, UK",
     },
     title: "Lead Engineer",
-    responsibilites:
+    responsibilities:
       "Full Stack engineer helping to grow the engineering department",
   },
   {
@@ -30,7 +44,7 @@ export const jobs: Array<Job> = [
       description: "Bristol, UK",
     },
     title: "Technology Manager",
-    responsibilites: "Technology Manager to the 20 strong Android & iOS teams",
+    responsibilities: "Technology Manager to the 20 strong Android & iOS teams",
   },
   {
     from: new Date("2014-02-01"),
@@ -45,7 +59,7 @@ export const jobs: Array<Job> = [
       description: "Bristol, UK",
     },
     title: "Technical Lead",
-    responsibilites:
+    responsibilities:
       "Tech lead for the Android & Web teams delivering B2B and B2C apps using Native & Hybrid app approaches",
   },
   {
@@ -61,7 +75,7 @@ export const jobs: Array<Job> = [
       description: "London, UK",
     },
     title: "Android Lead",
-    responsibilites: "Lead Android Engineer to the MATERIAL application",
+    responsibilities: "Lead Android Engineer to the MATERIAL application",
   },
   {
     from: new Date("2008-10-01"),
@@ -76,7 +90,24 @@ export const jobs: Array<Job> = [
       description: "London, Stockholm, Sydney, Auckland",
     },
     title: "Senior Consultant",
-    responsibilites:
+    responsibilities:
       "Modernising financial systems across the world with our flagship Java web application, Alfa",
+  },
+]
+
+export const volunteerJobs: Array<Job> = [
+  {
+    from: new Date("2003-01-01"),
+    to: new Date("2006-01-01"),
+    company: {
+      name: "RNLI",
+      url: "https://rnli.org",
+    },
+    location: {
+      latitude: 51.401389,
+      longitude: -3.5325,
+      description: "Atlantic College Station, UK",
+    },
+    title: "Crew Member on B-763",
   },
 ]
