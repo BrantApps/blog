@@ -1,3 +1,5 @@
+import {Technology, Skill} from "./types"
+
 export interface Job {
   from: Date
   to: Date
@@ -12,6 +14,7 @@ export interface Job {
   }
   title: string
   responsibilities?: string
+  skills: Array<Skill | Technology>
 }
 
 export const jobs: Array<Job> = [
@@ -30,6 +33,28 @@ export const jobs: Array<Job> = [
     title: "Lead Engineer",
     responsibilities:
       "Full Stack engineer helping to grow the engineering department",
+    skills: [
+      {
+        type: "react",
+        primary: "yes",
+      },
+      {
+        type: "node",
+        primary: "yes",
+      },
+      {
+        name: "hiring",
+        primary: "yes",
+      },
+      {
+        type: "react-native",
+        primary: "no",
+      },
+      {
+        type: "typescript",
+        primary: "no",
+      },
+    ],
   },
   {
     from: new Date("2015-02-01"),
@@ -45,6 +70,24 @@ export const jobs: Array<Job> = [
     },
     title: "Technology Manager",
     responsibilities: "Technology Manager to the 20 strong Android & iOS teams",
+    skills: [
+      {
+        name: "personal development",
+        primary: "yes",
+      },
+      {
+        name: "delivery",
+        primary: "yes",
+      },
+      {
+        name: "hiring",
+        primary: "yes",
+      },
+      {
+        name: "architecture",
+        primary: "no",
+      },
+    ],
   },
   {
     from: new Date("2014-02-01"),
@@ -60,7 +103,25 @@ export const jobs: Array<Job> = [
     },
     title: "Technical Lead",
     responsibilities:
-      "Tech lead for the Android & Web teams delivering B2B and B2C apps using Native & Hybrid app approaches",
+      "Android & Web tech lead delivering B2B and B2C apps using native & hybrid approaches",
+    skills: [
+      {
+        type: "android",
+        primary: "yes",
+      },
+      {
+        name: "mentoring",
+        primary: "yes",
+      },
+      {
+        name: "delivery",
+        primary: "no",
+      },
+      {
+        name: "dev advocate",
+        primary: "no",
+      },
+    ],
   },
   {
     from: new Date("2013-06-01"),
@@ -76,6 +137,16 @@ export const jobs: Array<Job> = [
     },
     title: "Android Lead",
     responsibilities: "Lead Android Engineer to the MATERIAL application",
+    skills: [
+      {
+        type: "android",
+        primary: "yes",
+      },
+      {
+        type: "java",
+        primary: "no",
+      },
+    ],
   },
   {
     from: new Date("2008-10-01"),
@@ -92,6 +163,20 @@ export const jobs: Array<Job> = [
     title: "Senior Consultant",
     responsibilities:
       "Modernising financial systems across the world with our flagship Java web application, Alfa",
+    skills: [
+      {
+        type: "java",
+        primary: "yes",
+      },
+      {
+        name: "migrations",
+        primary: "yes",
+      },
+      {
+        name: "consultancy",
+        primary: "no",
+      },
+    ],
   },
 ]
 
@@ -109,5 +194,19 @@ export const volunteerJobs: Array<Job> = [
       description: "Atlantic College Station, UK",
     },
     title: "Crew Member on B-763",
+    skills: [
+      {
+        name: "navigation",
+        primary: "yes",
+      },
+      {
+        name: "first aid",
+        primary: "yes",
+      },
+      {
+        name: "helming",
+        primary: "no",
+      },
+    ],
   },
 ]

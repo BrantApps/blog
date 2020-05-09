@@ -51,7 +51,7 @@ export default function Talks() {
       <CssBaseline />
       <Container maxWidth="lg">
         <main>
-          <VerticalTimeline>
+          <VerticalTimeline animate={false}>
             {sortedTalks.map((talk, index) => (
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"

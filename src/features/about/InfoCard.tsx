@@ -7,6 +7,7 @@ import {
   Typography,
   makeStyles,
   Theme,
+  Divider,
 } from "@material-ui/core"
 import dayjs from "dayjs"
 import React from "react"
@@ -20,7 +21,7 @@ interface Props {
   }
   from: Date
   to: Date
-  footer: string
+  footer: React.ReactNode
   icon?: React.ReactType
   description?: string
 }
@@ -72,7 +73,6 @@ export default function InfoCard(props: Props) {
                                 : dayjs(to).format("MMM YYYY")
                             }`}
               </Typography>
-              <Typography variant="body1">{footer}</Typography>
             </Box>
           </Box>
         </Grid>
@@ -82,6 +82,12 @@ export default function InfoCard(props: Props) {
           </Grid>
         ) : null}
       </Grid>
+      <Box>
+        <Box display="div" m={1} />
+        <Divider />
+        <Box display="div" m={1} />
+        {footer}
+      </Box>
     </Paper>
   )
 }
