@@ -71,6 +71,7 @@ export default function About() {
             />
           ))}
         </Grid>
+
         <Grid item xs={12} md={6}>
           <Typography variant="h4" gutterBottom>
             Volunteering

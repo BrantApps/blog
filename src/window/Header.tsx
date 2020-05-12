@@ -2,10 +2,10 @@ import React from "react"
 import {makeStyles} from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
-import {Section} from "./types"
+import {Section} from "../features/blog/types"
 import {Tabs, Tab, FormControlLabel, Switch} from "@material-ui/core"
 import {useLocation} from "react-router-dom"
-import theme from "../../theme"
+import theme from "../theme"
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {

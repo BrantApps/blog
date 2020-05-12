@@ -1,10 +1,10 @@
 import React, {useState} from "react"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
-import Footer from "./features/blog/Footer"
+import Footer from "./window/Footer"
 import Routes from "./routes/Routes"
 import {BrowserRouter} from "react-router-dom"
-import Header from "./features/blog/Header"
+import Header from "./window/Header"
 import Blog from "./features/blog/Blog"
 import Talks from "./features/talks/Talks"
 import {
@@ -14,6 +14,7 @@ import {
   Theme,
 } from "@material-ui/core"
 import About from "./features/about/About"
+import defaultTheme from "./theme"
 
 const sections = [
   {title: "Posts", component: Blog, path: "/"},
@@ -21,15 +22,10 @@ const sections = [
   {title: "About", component: About, path: "/about"},
 ]
 
-const defaultBlogThemeObject = {
-  palette: {
-    type: "light",
-  },
-}
-
 function useDarkMode() {
-  const [theme, setTheme] = useState(defaultBlogThemeObject)
+  const [theme, setTheme] = useLocalStorage("theme", defaultTheme)
   const toggleDarkMode = () => {
+    console.log(theme.palette.primary.light)
     const {
       palette: {type},
     } = theme
@@ -38,6 +34,10 @@ function useDarkMode() {
       palette: {
         ...theme.palette,
         type: type === "light" ? ("dark" as const) : ("light" as const),
+        primary: {
+          main:
+            type === "light" ? "#FFFFFF" : defaultTheme.palette.primary.main,
+        },
       },
     }
     setTheme(updatedTheme)
@@ -52,7 +52,8 @@ export default function App() {
     <ThemeProvider
       theme={createMuiTheme({
         palette: {
-          type: (theme as Theme).palette.type,
+          type: theme.palette.type,
+          primary: theme.palette.primary,
         },
       })}
     >
@@ -78,4 +79,38 @@ export default function App() {
       </Container>
     </ThemeProvider>
   )
+}
+
+function useLocalStorage(key: string, initialValue: object) {
+  // State to store our value
+  // Pass initial state function to useState so logic is only executed once
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      // Get from local storage by key
+      const item = window.localStorage.getItem(key)
+      // Parse stored json or if none return initialValue
+      return item ? JSON.parse(item) : initialValue
+    } catch (error) {
+      // If error also return initialValue
+      console.log(error)
+      return initialValue
+    }
+  })
+
+  const setValue = (value: object) => {
+    try {
+      // Allow value to be a function so we have same API as useState
+      const valueToStore =
+        value instanceof Function ? value(storedValue) : value
+      // Save state
+      setStoredValue(valueToStore)
+      // Save to local storage
+      window.localStorage.setItem(key, JSON.stringify(valueToStore))
+    } catch (error) {
+      // A more advanced implementation would handle the error case
+      console.log(error)
+    }
+  }
+
+  return [storedValue, setValue]
 }
