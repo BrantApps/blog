@@ -4,6 +4,7 @@ export type PostSummary = {
   title: string
   description: string
   date: string
+  path: string
 }
 
 export type SocialLink = {

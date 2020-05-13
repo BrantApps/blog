@@ -15,11 +15,21 @@ import {
 } from "@material-ui/core"
 import About from "./features/about/About"
 import defaultTheme from "./theme"
+import Post from "./features/posts/Post"
 
-const sections = [
+const primaryRoutes = [
   {title: "Posts", component: Blog, path: "/"},
   {title: "Talks", component: Talks, path: "/talks"},
   {title: "About", component: About, path: "/about"},
+]
+
+const secondaryRoutes = [
+  {
+    title: "Post",
+    component: Post,
+    parentPath: "/posts",
+    path: "/:id",
+  },
 ]
 
 function useDarkMode() {
@@ -63,14 +73,19 @@ export default function App() {
           <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Header
               title="Branton's Yak"
-              sections={sections}
+              sections={primaryRoutes}
               appliedPaletteType={(theme as Theme).palette.type}
               handleThemeSwitch={toggleDarkMode as () => void}
             />
             <Routes
-              routes={sections.map((section) => ({
+              primaryRoutes={primaryRoutes.map((section) => ({
                 path: section.path,
                 component: section.component,
+              }))}
+              secondaryRoutes={secondaryRoutes.map((subSections) => ({
+                parentPath: subSections.parentPath,
+                path: subSections.path,
+                component: subSections.component,
               }))}
             />
           </BrowserRouter>

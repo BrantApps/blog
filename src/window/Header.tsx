@@ -65,7 +65,7 @@ export default function Header(props: Props) {
         />
       </Toolbar>
       <Tabs
-        value={location.pathname}
+        value={sanitisePathname(location.pathname)}
         indicatorColor="primary"
         textColor="primary"
         variant="fullWidth"
@@ -87,4 +87,12 @@ export default function Header(props: Props) {
       </Tabs>
     </React.Fragment>
   )
+}
+
+function sanitisePathname(path: string) {
+  if (path.indexOf("posts") > 0) {
+    return "/"
+  }
+
+  return path
 }
