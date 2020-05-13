@@ -2,9 +2,13 @@ import React from "react"
 import {makeStyles} from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import Paper from "@material-ui/core/Paper"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import TwitterIcon from "@material-ui/icons/Twitter"
+import StackOverflowIcon from "@material-ui/icons/HorizontalSplit"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
-import {SocialLink, Archive} from "./types"
+import {Archive, SocialLink} from "./types"
+import staticConfig from "../../config"
 
 const useStyles = makeStyles((theme) => ({
   sidebarAboutBox: {
@@ -16,29 +20,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-interface Props {
-  archives: Array<Archive>
-  description: string
-  social: Array<SocialLink>
-  title: string
+const sidebar = {
+  title: "What's this?",
+  description: "👋 It's my personal blog discussing software, hiring & teams.",
+  archives: [
+    {year: 2020, url: "#"},
+    {year: 2019, url: "#"},
+    {year: 2018, url: "#"},
+    {year: 2017, url: "#"},
+    {year: 2016, url: "#"},
+    {year: 2015, url: "#"},
+  ],
+  social: [
+    {name: "GitHub", icon: GitHubIcon, url: staticConfig.githubUrl},
+    {
+      name: "Twitter",
+      icon: TwitterIcon,
+      url: staticConfig.twitterUrl,
+    },
+    {
+      name: "Stack Overflow",
+      icon: StackOverflowIcon,
+      url: staticConfig.stackoverflowUrl,
+    },
+  ],
 }
 
-export default function Sidebar(props: Props) {
+export default function Sidebar() {
   const classes = useStyles()
-  const {archives, description, social, title} = props
 
   return (
     <Grid item xs={12} md={4}>
       <Paper elevation={0} className={classes.sidebarAboutBox}>
         <Typography variant="h6" gutterBottom>
-          {title}
+          {sidebar.title}
         </Typography>
-        <Typography>{description}</Typography>
+        <Typography>{sidebar.description}</Typography>
       </Paper>
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
         Social
       </Typography>
-      {social.map((network) => (
+      {sidebar.social.map((network: SocialLink) => (
         <Link
           display="block"
           variant="body1"
@@ -56,7 +78,7 @@ export default function Sidebar(props: Props) {
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
         Archives
       </Typography>
-      {archives.map((archive) => (
+      {sidebar.archives.map((archive: Archive) => (
         <Link
           display="block"
           variant="body1"

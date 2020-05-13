@@ -4,7 +4,12 @@ import {withStyles, Theme} from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
 
-const styles = (_: Theme) => ({})
+const styles = (theme: Theme) => ({
+  markdown: {
+    ...theme.typography.body2,
+    padding: theme.spacing(3, 0),
+  },
+})
 
 const options = {
   overrides: {
@@ -37,7 +42,6 @@ const options = {
 }
 
 interface Props {
-  className: string
   key: string
   children?: React.ReactNode
 }

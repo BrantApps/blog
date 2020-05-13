@@ -39,16 +39,10 @@ export default function Contact() {
   return (
     <Paper
       className={classes.introduction}
-      style={{backgroundImage: `url(https://source.unsplash.com/random)`}}
+      style={{
+        backgroundImage: `url(https://source.unsplash.com/weekly?tessellate)`,
+      }}
     >
-      {/* Increase the priority of the hero background image */}
-      {
-        <img
-          style={{display: "none"}}
-          src={"https://source.unsplash.com/random"}
-          alt={"replace"}
-        />
-      }
       <div className={classes.overlay} />
       <Grid container>
         <Grid item xs={12} md={8}>

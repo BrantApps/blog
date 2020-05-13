@@ -1,15 +1,7 @@
 import React from "react"
 import Divider from "@material-ui/core/Divider"
-import {makeStyles} from "@material-ui/core/styles"
 import {Grid, Typography} from "@material-ui/core"
 import Markdown from "./Markdown"
-
-const useStyles = makeStyles((theme) => ({
-  markdown: {
-    ...theme.typography.body2,
-    padding: theme.spacing(3, 0),
-  },
-}))
 
 interface Props {
   posts: Array<string>
@@ -17,7 +9,6 @@ interface Props {
 }
 
 export default function Main(props: Props) {
-  const classes = useStyles()
   const {posts, title} = props
 
   return (
@@ -27,9 +18,7 @@ export default function Main(props: Props) {
       </Typography>
       <Divider />
       {posts.map((post) => (
-        <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-          {post}
-        </Markdown>
+        <Markdown key={post.substring(0, 40)}>{post}</Markdown>
       ))}
     </Grid>
   )
