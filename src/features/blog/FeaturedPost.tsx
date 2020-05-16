@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent"
 import CardMedia from "@material-ui/core/CardMedia"
 import Hidden from "@material-ui/core/Hidden"
 import {PostSummary} from "./types"
+import {Link} from "@material-ui/core"
 
 const useStyles = makeStyles({
   card: {
@@ -44,9 +45,13 @@ export default function FeaturedPost(props: Props) {
               <Typography variant="subtitle1" paragraph>
                 {post.description}
               </Typography>
-              <Typography variant="subtitle1" color="primary">
+              <Link
+                variant="subtitle1"
+                color="primary"
+                href={`${process.env.PUBLIC_URL}${post.path}`}
+              >
                 Continue reading...
-              </Typography>
+              </Link>
             </CardContent>
           </div>
           <Hidden xsDown>

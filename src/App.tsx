@@ -7,12 +7,7 @@ import {BrowserRouter} from "react-router-dom"
 import Header from "./window/Header"
 import Blog from "./features/blog/Blog"
 import Talks from "./features/talks/Talks"
-import {
-  ThemeProvider,
-  CssBaseline,
-  createMuiTheme,
-  Theme,
-} from "@material-ui/core"
+import {ThemeProvider, CssBaseline, createMuiTheme} from "@material-ui/core"
 import About from "./features/about/About"
 import defaultTheme from "./theme"
 import Post from "./features/posts/Post"
@@ -74,7 +69,7 @@ export default function App() {
             <Header
               title="Branton's Yak"
               sections={primaryRoutes}
-              appliedPaletteType={(theme as Theme).palette.type}
+              appliedPaletteType={theme.palette.type}
               handleThemeSwitch={toggleDarkMode as () => void}
             />
             <Routes
