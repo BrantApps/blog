@@ -32,7 +32,10 @@ export default function FeaturedPost(props: Props) {
 
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href="#">
+      <CardActionArea
+        component="a"
+        href={`${process.env.PUBLIC_URL}${post.path}`}
+      >
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
             <CardContent>
