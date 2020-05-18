@@ -3,6 +3,8 @@ import ReactMarkdown from "markdown-to-jsx"
 import {withStyles, Theme} from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
+import Image from "../posts/Image"
+import theme from "../../theme"
 
 const styles = (theme: Theme) => ({
   markdown: {
@@ -37,6 +39,9 @@ const options = {
           <Typography component="span" {...props} />
         </li>
       )),
+    },
+    Image: {
+      component: Image,
     },
   },
 }

@@ -4,10 +4,10 @@ import {makeStyles} from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
-import Markdown from "markdown-to-jsx"
 import {useParams} from "react-router-dom"
 import {Box, CircularProgress} from "@material-ui/core"
 import theme from "../../theme"
+import Markdown from "../blog/Markdown"
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {

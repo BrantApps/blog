@@ -21,7 +21,8 @@ So, you have 1 instant messaging platform in use across your org, your culture e
 ### Find your hotspots
 A hotspot in this context are rooms that have high message traffic (number of messages) and a high member count (number of people in the room). If you are using Slack (where rooms are called channels and always start with a `#`) then channels such as  `#general` and `#support` are the first to come to mind. We can use the [Slack API](https://api.slack.com/) to take our first steps into visualising what is happening in your chat workspace. Here's what we want to draw;
 
-![Find your hotspots](../assets/visualising-slack/hotspots.png)
+<Image src="https://raw.githubusercontent.com/BrantApps/blog/master/src/features/posts/assets/visualising-slack/hotspots.png" alt="Find your hotspots"/>
+
 #### On the x-axis, the channel's creation date and on the y-axis, the number of people in that channel. The Bubble size represents the number of messages sent over a given period. 
 
 This kind of plot can provide your first evidence-based insight into how your company is using Slack.
@@ -39,7 +40,8 @@ What we need is a system whereby it is easy for a message to reach the right per
 ### Measuring 'channel commitment'
 With our goal to allow the number of channels to grow in order to improve discussion focus and decrease number of members we can use the Slack API to track channel commitment. Here's how an organisation's channel commitment may look;
 
-![Fewer people in more channels](../assets/visualising-slack/fewer-people-more-channels.png)
+<Image src="https://raw.githubusercontent.com/BrantApps/blog/master/src/features/posts/assets/visualising-slack/fewer-people-more-channels.png" alt="Fewer people in more channels"/>
+
 #### Flattening the curve by allowing an expansion of channels who have a narrow focus and fewer members will let team members find the right people and reduce distractions born out of irrelevant messages.
 
 Tracking these two plots will provide on-going evidence as to how well your initiatives are are working out in practice.
