@@ -8,6 +8,7 @@ import {useParams} from "react-router-dom"
 import {Box, CircularProgress} from "@material-ui/core"
 import theme from "../../theme"
 import Markdown from "../blog/Markdown"
+import staticConfig from "../../config"
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -16,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const draftPost = raw("./markdown/draft.md")
+const debugPost = raw("./markdown/visualising-slack.md")
 
 export default function Post() {
   const {id} = useParams()
@@ -24,10 +26,12 @@ export default function Post() {
 
   useEffect(() => {
     async function fetchMarkdown() {
-      const postResponse = await fetch(
-        `https://raw.githubusercontent.com/BrantApps/blog/master/src/features/posts/markdown/${id}.md`,
-      )
-      if (postResponse) {
+      if (staticConfig.debug) {
+        setPost(debugPost)
+      } else {
+        const postResponse = await fetch(
+          `https://raw.githubusercontent.com/BrantApps/blog/master/src/features/posts/markdown/${id}.md`,
+        )
         if (postResponse.status === 200) {
           const text = await postResponse.text()
           setPost(text)

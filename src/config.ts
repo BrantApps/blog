@@ -1,4 +1,5 @@
 const staticConfig = {
+  debug: process.env.NODE_ENV !== "production",
   githubUrl: "https://github.com/BrantApps",
   twitterUrl: "https://twitter.com/BrantApps",
   stackoverflowUrl: "https://stackoverflow.com/users/story/1348379",

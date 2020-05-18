@@ -2,21 +2,21 @@
 #### June 2019, Candide, Lead Engineer
 
 # Preamble
-As companies grow in size there is a painful period where existing, probably organic modes of communication start to creak and let you down. This entry explains how to make objective improvements to your uses of instant messaging (IM) tools backed up by theory and discusses the limits of these actions when juxtaposed against more macro ideas such as Radical Transparency.
+As companies grow in size there is a painful period where existing, organic modes of communication start to creak and let you down. This entry explains how to make evidence-based improvements to your use of instant messaging tools such as Slack.
 
 ## Knowing you have a problem
 > "Hi folks, I wondered if you could..."
 
-You've probably read messages that start like this. But what room was it sent to? Did 50 notifications get sent? Was the resolution a redirect to another room? We've all been here. However, if this is becoming a common occurrence then your existing IM communication paths are letting you down. Around the same time, you are likely hearing complaints that there are _just too many rooms!_. Either or all of these symptoms are your canaries that information is becoming harder to find or, at worst, is being hidden and it's time to take action.
+You've probably read messages that start like this. But what room was it sent to? Did 50 notifications get sent? Was the resolution a redirect to another room? We've all been here, however, if this is a common occurrence then your existing instant message (IM) communication paths are letting you down. Around the same time, you are likely hearing complaints that there are _just too many rooms!_. Either, or all of these symptoms are your canaries that information is becoming harder to find or, at worst, is being hidden and it's time to take action.
 
 ## Taking action
-One of the easiest resolutions to problems involving a tool is to focus in on the tool itself. Stop, don't do this just yet. When it comes to internal communications there are a couple of health checks you need to pass before getting into the _nitty gritty_ of how it is being used.
+One of the easiest resolutions to problems involving a tool is to focus in on the tool itself, but don't do this just yet. When it comes to internal comms there are a couple of health checks you need to pass before getting into the _nitty gritty_ of how a tool is being used.
 
 1. Are there > 1 instant messaging tools being used across the organisation? Are they valid usages?
 2. Anecdotally, how many private rooms are there? Ask your colleagues or send out a survey. Nothing presented here can solve the problems of [information hiding](https://onlinelibrary.wiley.com/doi/abs/10.1002/job.737) which is a serious problem for many growing organisations. Cut this off at the root.
 3. And finally, do new starters (and existing staff) have a quick start as to how to communicate with their peers and across the organisation? This is key to sustaining the changes you will make next.
 
-So, you have 1 instant messaging platform in use across your org, your culture encourages openess with private rooms reserved for warranted confidentiality and your new starters have a quick start on how to ask for help and communicate change. These changes alone, will result in sustained improved communications but your _chat-scape_ is still a jumbled mess. It's time to step it up and get into the detail...
+So, you have 1 instant messaging platform in use, your culture encourages openess with private rooms reserved for warranted confidentiality and your new starters have a quick start on how to ask for help and communicate change. These changes alone, will result in sustained improved communications but your "chat-scape" (room names, purposes) is still a jumbled mess. It's time to get into the detail of how the tool is being used...
 
 ### Find your hotspots
 A hotspot in this context are rooms that have high message traffic (number of messages) and a high member count (number of people in the room). If you are using Slack (where rooms are called channels and always start with a `#`) then channels such as  `#general` and `#support` are the first to come to mind. We can use the [Slack API](https://api.slack.com/) to take our first steps into visualising what is happening in your chat workspace. Here's what we want to draw;
