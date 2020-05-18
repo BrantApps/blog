@@ -17,7 +17,7 @@ export default function Image(props: Props) {
       alignItems="center"
       style={{padding: theme.spacing(2)}}
     >
-      <Grid item xs={8}>
+      <Grid item xs={12} md={8}>
         <CardMedia component="img" image={props.src} alt={props.alt} />
       </Grid>
     </Grid>
