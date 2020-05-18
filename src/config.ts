@@ -22,13 +22,13 @@ const staticConfig = {
       path: "/posts/getting-your-users-to-upgrade",
     },
     {
-      title: "Visualising your Slack workspace",
+      title: "Visualising Slack",
       date: "June, 2019",
       description:
-        "Struggling to find information in Slack & want to change 'things'. If so, then click right this way...",
+        "Learn how to make evidence-based changes to your use of Slack improving knowledge sharing & minimising distraction...",
       image: "https://source.unsplash.com/weekly?graph",
       imageText: "Bubble chart",
-      path: "/posts/visualising-your-slack-workspace",
+      path: "/posts/visualising-slack",
     },
   ],
 }

@@ -1,6 +1,5 @@
 # Passed QA
-
-#### April 4, 2018, Just Eat, Technology Manager
+#### April 2018, Just Eat, Technology Manager
 
 I just left a retrospective where I wanted to gather the team’s thoughts on what we meant when we said an enhancement “Passed QA” or we pushed the _Ready for Release_ button in a well-known issue tracking system. It’s a little rough and ready (I literally just wrote it on the train home) and Android-centric but perhaps a fun read for other engineers/assurance professionals working with mobile. Enjoy…
 
