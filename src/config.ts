@@ -1,5 +1,6 @@
 const staticConfig = {
   debug: process.env.NODE_ENV !== "production",
+  website: "https://brant.app",
   githubUrl: "https://github.com/BrantApps",
   twitterUrl: "https://twitter.com/BrantApps",
   stackoverflowUrl: "https://stackoverflow.com/users/story/1348379",
@@ -32,6 +33,7 @@ const staticConfig = {
       path: "/posts/visualising-slack",
     },
   ],
+  latestPost: "../posts/markdown/passed-qa.md",
 }
 
 export default staticConfig

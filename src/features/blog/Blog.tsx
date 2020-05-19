@@ -10,7 +10,7 @@ import Main from "./Main"
 import Sidebar from "./Sidebar"
 import staticConfig from "../../config"
 
-const latestPost = raw("../posts/markdown/passed-qa.md")
+const latestPost = raw(staticConfig.latestPost)
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),

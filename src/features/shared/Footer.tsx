@@ -3,12 +3,13 @@ import {makeStyles} from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
+import staticConfig from "../../config"
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://brant.app">
+      <Link color="inherit" href={staticConfig.website}>
         brant.apps
       </Link>{" "}
       {new Date().getFullYear()}
