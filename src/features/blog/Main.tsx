@@ -1,7 +1,7 @@
 import React from "react"
 import Divider from "@material-ui/core/Divider"
 import {Grid, Typography} from "@material-ui/core"
-import Markdown from "./Markdown"
+import Markdown from "../shared/Markdown"
 
 interface Props {
   posts: Array<string>

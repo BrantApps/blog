@@ -7,7 +7,7 @@ import Container from "@material-ui/core/Container"
 import {useParams} from "react-router-dom"
 import {Box, CircularProgress} from "@material-ui/core"
 import theme from "../../theme"
-import Markdown from "../blog/Markdown"
+import Markdown from "../shared/Markdown"
 import staticConfig from "../../config"
 
 const useStyles = makeStyles((theme) => ({
