@@ -20,7 +20,7 @@ const staticConfig = {
       title: "Getting your users to upgrade",
       date: "December 2019",
       description:
-        "Learn how we went about asking, then forcing users to upgrade their apps at Candide...",
+        "Learn about how we went about asking, then forcing users to upgrade their apps at Candide...",
       image: "https://source.unsplash.com/weekly?mountain",
       imageText: "'Encarter Encyclopedia' CD-ROMs",
       path: "/posts/getting-your-users-to-upgrade",
@@ -29,7 +29,7 @@ const staticConfig = {
       title: "Visualising Slack",
       date: "June, 2019",
       description:
-        "Learn how to make evidence-based changes to your use of Slack improving knowledge sharing & minimising distraction...",
+        "Make evidence-based changes to your use of Slack to improve knowledge share & minimise distraction...",
       image: "https://source.unsplash.com/weekly?graph",
       imageText: "Bubble chart",
       path: "/posts/visualising-slack",
