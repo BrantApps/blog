@@ -11,6 +11,14 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
+  title: {
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "left",
+    },
+    [theme.breakpoints.up("md")]: {
+      textAlign: "center",
+    },
+  },
 }))
 
 interface Props {
@@ -27,32 +35,13 @@ export default function Header(props: Props) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Box
-          display={{xs: "none", md: "block", lg: "block", xl: "block"}}
-          itemType="flex"
-          flex="1"
-        >
+        <Box itemType="flex" flex="1">
           <Typography
             component="h2"
             variant="h5"
             color="inherit"
-            align="center"
             noWrap
-          >
-            {title}
-          </Typography>
-        </Box>
-        <Box
-          display={{xs: "block", md: "none", lg: "none", xl: "none"}}
-          itemType="flex"
-          flex="1"
-        >
-          <Typography
-            component="h2"
-            variant="h5"
-            color="inherit"
-            align="left"
-            noWrap
+            className={classes.title}
           >
             {title}
           </Typography>
