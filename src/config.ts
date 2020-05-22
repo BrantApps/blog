@@ -1,3 +1,5 @@
+import raw from "raw.macro"
+
 const staticConfig = {
   debug: process.env.NODE_ENV !== "production",
   website: "https://brant.app",
@@ -33,7 +35,7 @@ const staticConfig = {
       path: "/posts/visualising-slack",
     },
   ],
-  latestPost: "../posts/markdown/passed-qa.md",
+  latestPost: raw("./features/posts/markdown/passed-qa.md"),
 }
 
 export default staticConfig

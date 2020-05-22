@@ -3,20 +3,13 @@ import {makeStyles} from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import {Section} from "../blog/types"
-import {Tabs, Tab, FormControlLabel, Switch} from "@material-ui/core"
+import {Tabs, Tab, FormControlLabel, Switch, Box} from "@material-ui/core"
 import {useLocation} from "react-router-dom"
 import theme from "../../theme"
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-  },
-  toolbarTitle: {
-    flex: 1,
-  },
-  toolbarLink: {
-    padding: theme.spacing(1),
-    flexShrink: 0,
   },
 }))
 
@@ -33,36 +26,50 @@ export default function Header(props: Props) {
 
   return (
     <React.Fragment>
-      <Toolbar className={classes.toolbar} style={{alignItems: "center"}}>
-        <div style={{flex: 1}} />
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          className={classes.toolbarTitle}
-          style={{
-            flex: 2,
-          }}
+      <Toolbar className={classes.toolbar}>
+        <Box
+          display={{xs: "none", md: "block", lg: "block", xl: "block"}}
+          itemType="flex"
+          flex="1"
         >
-          {title}
-        </Typography>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={props.appliedPaletteType === "dark"}
-              onChange={props.handleThemeSwitch}
-              name="darkmode"
-              color="primary"
-            />
-          }
-          style={{
-            flex: 1,
-            justifyContent: "flex-end",
-          }}
-          label={"🌗"}
-        />
+          <Typography
+            component="h2"
+            variant="h5"
+            color="inherit"
+            align="center"
+            noWrap
+          >
+            {title}
+          </Typography>
+        </Box>
+        <Box
+          display={{xs: "block", md: "none", lg: "none", xl: "none"}}
+          itemType="flex"
+          flex="1"
+        >
+          <Typography
+            component="h2"
+            variant="h5"
+            color="inherit"
+            align="left"
+            noWrap
+          >
+            {title}
+          </Typography>
+        </Box>
+        <Box itemType="div" position="absolute" right="0">
+          <FormControlLabel
+            control={
+              <Switch
+                checked={props.appliedPaletteType === "dark"}
+                onChange={props.handleThemeSwitch}
+                name="darkmode"
+                color="primary"
+              />
+            }
+            label={"🌗"}
+          />
+        </Box>
       </Toolbar>
       <Tabs
         value={sanitisePathname(location.pathname)}

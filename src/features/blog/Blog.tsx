@@ -1,5 +1,4 @@
 import React from "react"
-import raw from "raw.macro"
 import {makeStyles} from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Grid from "@material-ui/core/Grid"
@@ -10,7 +9,6 @@ import Main from "./Main"
 import Sidebar from "./Sidebar"
 import staticConfig from "../../config"
 
-const latestPost = raw(staticConfig.latestPost)
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
@@ -32,7 +30,7 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title="Latest Posts..." posts={[latestPost]} />
+            <Main title="Latest Posts..." posts={[staticConfig.latestPost]} />
             <Sidebar />
           </Grid>
         </main>
