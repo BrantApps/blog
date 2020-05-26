@@ -2,10 +2,10 @@
 #### June 2019, Candide, Lead Engineer
 
 # Preamble
-As companies grow in size there is a painful period where existing, organic modes of communication start to creak and let you down. This entry explains how to make evidence-based improvements to your use of instant messaging tools such as Slack.
+As companies grow in size there is a painful period where existing, organic modes of communication can start to let you down. This entry explains how to make evidence-based improvements to your use of instant messaging tools such as Slack.
 
 ## Knowing you have a problem
-> "Hi folks, I wondered if you could..."
+> 👋Hi folks, I wondered if you could...
 
 You've probably read messages that start like this. But what room was it sent to? Did 50 notifications get sent? Was the resolution a redirect to another room? We've all been here, however, if this is a common occurrence then your existing instant message (IM) communication paths are letting you down. Around the same time, you are likely hearing complaints that there are _just too many rooms!_. Either, or all of these symptoms are your canaries that information is becoming harder to find or, at worst, is being hidden and it's time to take action.
 

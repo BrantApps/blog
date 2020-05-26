@@ -1,9 +1,10 @@
-import React from "react"
-import ReactMarkdown from "markdown-to-jsx"
-import {withStyles, Theme} from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
+import {Theme, withStyles} from "@material-ui/core/styles"
+import Typography from "@material-ui/core/Typography"
+import ReactMarkdown from "markdown-to-jsx"
+import React from "react"
 import Image from "../posts/Image"
+import Blockquote from "../posts/Blockquote"
 
 const styles = (theme: Theme) => ({
   markdown: {
@@ -31,7 +32,7 @@ const options = {
       props: {gutterBottom: true, variant: "caption", paragraph: true},
     },
     p: {component: Typography, props: {paragraph: true}},
-    a: {component: Link},
+    a: {component: Link, props: {underline: "always"}},
     li: {
       component: withStyles(styles)(({...props}) => (
         <li>
@@ -41,6 +42,9 @@ const options = {
     },
     Image: {
       component: Image,
+    },
+    blockquote: {
+      component: Blockquote,
     },
   },
 }
