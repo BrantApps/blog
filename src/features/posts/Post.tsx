@@ -23,9 +23,12 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: 0,
     [theme.breakpoints.down("xs")]: {
-      marginRight: theme.spacing(4),
+      marginRight: theme.spacing(5),
     },
     [theme.breakpoints.up("sm")]: {
+      marginRight: theme.spacing(6),
+    },
+    [theme.breakpoints.up("md")]: {
       marginRight: theme.spacing(6),
     },
     [theme.breakpoints.up("lg")]: {
