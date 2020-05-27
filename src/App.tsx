@@ -60,6 +60,13 @@ export default function App() {
           type: theme.palette.type,
           primary: theme.palette.primary,
         },
+        typography: {
+          ...theme.typography,
+          body2: {
+            ...theme.typography.body2,
+            fontSize: "1.25rem",
+          },
+        },
       })}
     >
       <CssBaseline />

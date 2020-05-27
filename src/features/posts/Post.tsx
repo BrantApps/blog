@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from "react"
 import raw from "raw.macro"
 import {makeStyles} from "@material-ui/core/styles"
-import CssBaseline from "@material-ui/core/CssBaseline"
 import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
 import {useParams} from "react-router-dom"
-import {Box, CircularProgress} from "@material-ui/core"
+import {
+  Box,
+  CircularProgress,
+  Switch,
+  FormControlLabel,
+  Typography,
+} from "@material-ui/core"
 import theme from "../../theme"
 import Markdown from "../shared/Markdown"
 import staticConfig from "../../config"
@@ -13,6 +18,19 @@ import staticConfig from "../../config"
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
+  },
+  switch: {
+    position: "absolute",
+    right: 0,
+    [theme.breakpoints.down("xs")]: {
+      marginRight: theme.spacing(4),
+    },
+    [theme.breakpoints.up("sm")]: {
+      marginRight: theme.spacing(6),
+    },
+    [theme.breakpoints.up("lg")]: {
+      marginRight: theme.spacing(16),
+    },
   },
 }))
 
@@ -23,6 +41,7 @@ export default function Post() {
   const {id} = useParams()
   const classes = useStyles()
   const [post, setPost] = useState<string>()
+  const [textSize, setTextSize] = useState<"bigger" | "smaller">("smaller")
 
   useEffect(() => {
     async function fetchMarkdown() {
@@ -44,15 +63,41 @@ export default function Post() {
     fetchMarkdown()
   }, [id])
 
+  function handleTextAccessibilityChange(change: "bigger" | "smaller") {
+    setTextSize(change)
+  }
+
   return (
     <React.Fragment>
-      <CssBaseline />
       <Container maxWidth="md">
         <main>
           {post ? (
-            <Grid container className={classes.mainGrid}>
-              <Markdown key={post.substring(0, 40)}>{post}</Markdown>
-            </Grid>
+            <React.Fragment>
+              <Grid container className={classes.mainGrid}>
+                <FormControlLabel
+                  control={
+                    <>
+                      <Typography variant="caption">A</Typography>
+                      <Switch
+                        name="largerText"
+                        color="primary"
+                        checked={textSize === "bigger"}
+                        onChange={(change) =>
+                          handleTextAccessibilityChange(
+                            change.target.checked ? "bigger" : "smaller",
+                          )
+                        }
+                      />
+                    </>
+                  }
+                  label={"A"}
+                  className={classes.switch}
+                />
+                <Markdown key={post.substring(0, 40)} textSize={textSize}>
+                  {post}
+                </Markdown>
+              </Grid>
+            </React.Fragment>
           ) : (
             <Box
               display="flex"

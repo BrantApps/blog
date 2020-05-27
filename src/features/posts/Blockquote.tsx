@@ -5,6 +5,7 @@ import theme from "../../theme"
 
 interface Props {
   children: any
+  textSize: "smaller" | "bigger"
 }
 
 export default function Blockquote(props: Props) {
@@ -38,7 +39,7 @@ export default function Blockquote(props: Props) {
             <Grid item>
               <em>
                 {React.cloneElement(child, {
-                  variant: "subtitle1",
+                  variant: props.textSize === "smaller" ? "subtitle1" : "body2",
                 })}
               </em>
             </Grid>

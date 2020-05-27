@@ -18,7 +18,7 @@ One of the easiest resolutions to problems involving a tool is to focus in on th
 
 So, you have 1 instant messaging platform in use, your culture encourages openess with private rooms reserved for warranted confidentiality and your new starters have a quick start on how to ask for help and communicate change. These changes alone, will result in sustained improved communications but your "chat-scape" (room names, purposes) is still a jumbled mess. It's time to get into the detail of how the tool is being used...
 
-### Find your hotspots
+## Find your hotspots
 A hotspot in this context are rooms that have high message traffic (number of messages) and a high member count (number of people in the room). If you are using Slack (where rooms are called channels and always start with a `#`) then channels such as  `#general` and `#support` are the first to come to mind. We can use the [Slack API](https://api.slack.com/) to take our first steps into visualising what is happening in your chat workspace. Here's what we want to draw;
 
 <Image src="https://raw.githubusercontent.com/BrantApps/blog/master/src/features/posts/assets/visualising-slack/hotspots.png" alt="Find your hotspots"/>
@@ -28,7 +28,7 @@ A hotspot in this context are rooms that have high message traffic (number of me
 This kind of plot can provide your first evidence-based insight into how your company is using Slack.
 Do bubbles tend to get larger over time? If so, this could be a hint that channels tend to evolve, taking on more than one purpose, collecting members and becoming a problem. Are there specific channels that both have a high number of members and highly trafficked from the get go? These channel are a potential source of distraction. We need to investigate why so many people need to know what's happening and take mitigating action to minimise disruptions.
 
-### Fixing the confused channel
+## Fixing the confused channel
 Channels with high traffic & high number of members from various disciplines tend to be confused. One minute, you are a passive observer of a chat between two engineers about a problem, next you are hearing that there are cakes in kitchen before you finally get a chance to ask for help with your analytics reports. Meanwhile, 20 other people click-and-scan just to clear their red dots. These losely related discussions with large amounts of waste (messages reaching people who don't need to see that message) represent confused channels.
 
 What we need is a system whereby it is easy for a message to reach the right person with lowest waste. To do this we'll need to give our Slack workspace structure, making channel topics searchable by title and encouraging **more channels with fewer members in each**. Slack themselves [published](https://slackhq.com/advice-for-large-teams-on-slack) a very concise and instructive guide precisely about this task. If you are embarking on a wider refactor of your Slack channel workspace then read this guide. The key points are;
@@ -37,7 +37,7 @@ What we need is a system whereby it is easy for a message to reach the right per
 
 > Channel naming conventions are key
 
-### Measuring 'channel commitment'
+## Measuring 'channel commitment'
 With our goal to allow the number of channels to grow in order to improve discussion focus and decrease number of members we can use the Slack API to track channel commitment. Here's how an organisation's channel commitment may look;
 
 <Image src="https://raw.githubusercontent.com/BrantApps/blog/master/src/features/posts/assets/visualising-slack/fewer-people-more-channels.png" alt="Fewer people in more channels"/>

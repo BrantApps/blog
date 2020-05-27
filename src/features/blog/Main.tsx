@@ -18,7 +18,9 @@ export default function Main(props: Props) {
       </Typography>
       <Divider />
       {posts.map((post) => (
-        <Markdown key={post.substring(0, 40)}>{post}</Markdown>
+        <Markdown key={post.substring(0, 40)} textSize={"smaller"}>
+          {post}
+        </Markdown>
       ))}
     </Grid>
   )

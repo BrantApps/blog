@@ -8,7 +8,7 @@ import Blockquote from "../posts/Blockquote"
 
 const styles = (theme: Theme) => ({
   markdown: {
-    ...theme.typography.body2,
+    ...theme.typography.body1,
     padding: theme.spacing(3, 0),
   },
 })
@@ -45,6 +45,55 @@ const options = {
     },
     blockquote: {
       component: Blockquote,
+      props: {textSize: "smaller"},
+    },
+  },
+}
+
+const accessibleOptions = {
+  overrides: {
+    ...options.overrides,
+    h1: {
+      component: Typography,
+      props: {
+        gutterBottom: true,
+        variant: "h4",
+      },
+    },
+    h2: {component: Typography, props: {gutterBottom: true, variant: "h5"}},
+    h3: {
+      component: Typography,
+      props: {gutterBottom: true, variant: "body1"},
+    },
+    h4: {
+      component: withStyles(styles)(({...props}) => (
+        <em>
+          <Typography
+            {...{
+              gutterBottom: true,
+              variant: "body1",
+              paragraph: true,
+              ...props,
+            }}
+          />
+        </em>
+      )),
+    },
+    p: {
+      component: Typography,
+      props: {paragraph: true, variant: "body2"},
+    },
+    a: {component: Link, props: {underline: "always"}},
+    li: {
+      component: withStyles(styles)(({...props}) => (
+        <li>
+          <Typography component="span" variant="body2" {...props} />
+        </li>
+      )),
+    },
+    blockquote: {
+      component: Blockquote,
+      props: {textSize: "bigger"},
     },
   },
 }
@@ -52,8 +101,13 @@ const options = {
 interface Props {
   key: string
   children?: React.ReactNode
+  textSize: "smaller" | "bigger"
 }
 
 export default function Markdown(props: Props) {
+  if (props.textSize === "bigger") {
+    console.log("applying accessible options")
+    return <ReactMarkdown options={accessibleOptions} {...props} />
+  }
   return <ReactMarkdown options={options} {...props} />
 }

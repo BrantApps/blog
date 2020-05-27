@@ -7,7 +7,7 @@ import staticConfig from "../../config"
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body1" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href={staticConfig.website}>
         brant.apps
