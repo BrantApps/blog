@@ -19,11 +19,26 @@ const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
   },
+  bottomBar: {
+    height: 0,
+    [theme.breakpoints.down("xs")]: {
+      position: "fixed",
+      bottom: 0,
+      height: 48,
+      right: 0,
+      width: "100%",
+      backgroundColor: theme.palette.background.paper,
+    },
+  },
   switch: {
     position: "absolute",
     right: 0,
     [theme.breakpoints.down("xs")]: {
+      position: "fixed",
       marginRight: theme.spacing(5),
+      bottom: 0,
+      right: 0,
+      backgroundColor: theme.palette.background.paper,
     },
     [theme.breakpoints.up("sm")]: {
       marginRight: theme.spacing(6),
@@ -38,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const draftPost = raw("./markdown/draft.md")
-const debugPost = raw("./markdown/visualising-slack.md")
+const debugPost = raw("./markdown/getting-your-users-to-upgrade.md")
 
 export default function Post() {
   const {id} = useParams()
@@ -77,6 +92,7 @@ export default function Post() {
           {post ? (
             <React.Fragment>
               <Grid container className={classes.mainGrid}>
+                <Box itemType="div" className={classes.bottomBar} />
                 <FormControlLabel
                   control={
                     <>
