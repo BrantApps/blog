@@ -17,19 +17,38 @@ export interface Job {
   skills: Array<Skill | Technology>
 }
 
+const candide = {
+  from: new Date("2018-06-01"),
+  to: new Date(),
+  company: {
+    name: "Candide",
+    url: "https://candidegardening.com",
+  },
+  location: {
+    latitude: 51.4545,
+    longitude: -2.5879,
+    description: "Bristol, UK",
+  },
+}
+
 export const jobs: Array<Job> = [
   {
-    from: new Date("2018-06-01"),
-    to: new Date(),
-    company: {
-      name: "Candide",
-      url: "https://candidegardening.com",
-    },
-    location: {
-      latitude: 51.4545,
-      longitude: -2.5879,
-      description: "Bristol, UK",
-    },
+    ...candide,
+    title: "CTO",
+    responsibilities: "Organization Design, Mentorship, Strategy",
+    skills: [
+      {
+        name: "Planning (OKRs)",
+        primary: "yes",
+      },
+      {
+        name: "hiring",
+        primary: "yes",
+      },
+    ],
+  },
+  {
+    ...candide,
     title: "Lead Engineer",
     responsibilities:
       "Full Stack engineer helping to grow the engineering department",
