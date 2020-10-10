@@ -56,7 +56,7 @@ const draftPost = raw("./markdown/draft.md")
 const debugPost = raw("./markdown/getting-your-users-to-upgrade.md")
 
 export default function Post() {
-  const {id} = useParams()
+  const {id} = useParams<{id: string}>()
   const classes = useStyles()
   const [post, setPost] = useState<string>()
   const [textSize, setTextSize] = useState<"bigger" | "smaller">("smaller")

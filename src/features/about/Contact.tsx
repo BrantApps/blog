@@ -40,7 +40,7 @@ export default function Contact() {
     <Paper
       className={classes.introduction}
       style={{
-        backgroundImage: `url(https://source.unsplash.com/weekly?tessellate)`,
+        backgroundImage: `url(https://source.unsplash.com/weekly?postit)`,
       }}
     >
       <div className={classes.overlay} />
