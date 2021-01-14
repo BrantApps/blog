@@ -13,7 +13,6 @@ function Copyright() {
         brant.apps
       </Link>{" "}
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   )
 }

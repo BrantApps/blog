@@ -106,7 +106,6 @@ interface Props {
 
 export default function Markdown(props: Props) {
   if (props.textSize === "bigger") {
-    console.log("applying accessible options")
     return <ReactMarkdown options={accessibleOptions} {...props} />
   }
   return <ReactMarkdown options={options} {...props} />

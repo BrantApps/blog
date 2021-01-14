@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom"
 import { useMarkdownFetcher } from "../shared/fetchMarkdown"
 import Document from "../shared/Document"
 
-const debugPost = raw("./markdown/getting-your-users-to-upgrade.md")
+const debugPrivacyPolicy = raw("./markdown/privacy-policy.md")
 
-export default function Post() {
+export default function PrivacyPolicy() {
   const {id} = useParams<{id: string}>()
-  const post = useMarkdownFetcher("features/posts/markdown", id, debugPost)
-  return <Document document={post} />
+  const privacyPolicy = useMarkdownFetcher("features/legal/markdown", id, debugPrivacyPolicy)
+
+  return <Document document={privacyPolicy} />
 }

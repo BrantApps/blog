@@ -1,10 +1,12 @@
-import {createMuiTheme, CssBaseline, ThemeProvider} from "@material-ui/core"
+import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core"
 import Box from "@material-ui/core/Box"
 import Container from "@material-ui/core/Container"
-import React, {useState} from "react"
-import {BrowserRouter} from "react-router-dom"
+import React, { useState } from "react"
+import { BrowserRouter } from "react-router-dom"
 import About from "./features/about/About"
 import Blog from "./features/blog/Blog"
+import PrivacyPolicy from "./features/legal/PrivacyPolicy"
+import TermsAndConditions from "./features/legal/TermsAndConditions"
 import Post from "./features/posts/Post"
 import Footer from "./features/shared/Footer"
 import Header from "./features/shared/Header"
@@ -25,12 +27,23 @@ const secondaryRoutes = [
     parentPath: "/posts",
     path: "/:id",
   },
+  {
+    title: "OceanLife Privacy Policy",
+    component: PrivacyPolicy,
+    parentPath: "/oceanlife",
+    path: "/privacy-policy",
+  },
+  {
+    title: "OceanLife Ts&Cs",
+    component: TermsAndConditions,
+    parentPath: "/oceanlife",
+    path: "/terms-and-conditions",
+  },
 ]
 
 function useDarkMode() {
   const [theme, setTheme] = useLocalStorage("theme", defaultTheme)
   const toggleDarkMode = () => {
-    console.log(theme.palette.primary.light)
     const {
       palette: {type},
     } = theme
@@ -52,7 +65,10 @@ function useDarkMode() {
 }
 
 export default function App() {
+  // const location = useLocation()
   const [theme, toggleDarkMode] = useDarkMode()
+
+  const showHeaderAndFooter = document.URL.match("(terms-and-conditions|privacy-policy)") == null
   return (
     <ThemeProvider
       theme={createMuiTheme({
@@ -73,12 +89,12 @@ export default function App() {
       <Container>
         <Box my={4}>
           <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <Header
+          {showHeaderAndFooter ? <Header
               title="Branton's Yak"
               sections={primaryRoutes}
               appliedPaletteType={theme.palette.type}
               handleThemeSwitch={toggleDarkMode as () => void}
-            />
+            /> : null}
             <Routes
               primaryRoutes={primaryRoutes.map((section) => ({
                 path: section.path,
@@ -91,7 +107,7 @@ export default function App() {
               }))}
             />
           </BrowserRouter>
-          <Footer title="Tech, Teams & Tea" description="" />
+          {showHeaderAndFooter ? <Footer title="Tech, Teams & Tea" description="" /> : null}
         </Box>
       </Container>
     </ThemeProvider>
