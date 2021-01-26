@@ -8,6 +8,7 @@ import Blog from "./features/blog/Blog"
 import PrivacyPolicy from "./features/legal/PrivacyPolicy"
 import TermsAndConditions from "./features/legal/TermsAndConditions"
 import Post from "./features/posts/Post"
+import WhatsNewAndroid from "./features/projects/oceanlife/WhatsNew"
 import Footer from "./features/shared/Footer"
 import Header from "./features/shared/Header"
 import Talks from "./features/talks/Talks"
@@ -39,6 +40,12 @@ const secondaryRoutes = [
     parentPath: "/oceanlife",
     path: "/terms-and-conditions",
   },
+  {
+    title: "OceanLife What's New on Android",
+    component: WhatsNewAndroid,
+    parentPath: "/oceanlife",
+    path: "/whats-new-android",
+  },
 ]
 
 function useDarkMode() {
@@ -68,7 +75,7 @@ export default function App() {
   // const location = useLocation()
   const [theme, toggleDarkMode] = useDarkMode()
 
-  const showHeaderAndFooter = document.URL.match("(terms-and-conditions|privacy-policy)") == null
+  const showHeaderAndFooter = document.URL.match("(terms-and-conditions|privacy-policy|whats-new-android)") == null
   return (
     <ThemeProvider
       theme={createMuiTheme({
