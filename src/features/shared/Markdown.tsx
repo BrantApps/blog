@@ -5,6 +5,7 @@ import ReactMarkdown from "markdown-to-jsx"
 import React from "react"
 import Image from "../posts/Image"
 import Blockquote from "../posts/Blockquote"
+import AppStoreBadge from "./badges/AppStoreBadge"
 
 const styles = (theme: Theme) => ({
   markdown: {
@@ -39,6 +40,9 @@ const options = {
           <Typography component="span" {...props} />
         </li>
       )),
+    },
+    AppStoreBadge: {
+      component: AppStoreBadge
     },
     Image: {
       component: Image,
