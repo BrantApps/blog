@@ -1,10 +1,10 @@
 import Link from "@material-ui/core/Link"
-import {Theme, withStyles} from "@material-ui/core/styles"
+import { Theme, withStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import ReactMarkdown from "markdown-to-jsx"
 import React from "react"
-import Image from "../posts/Image"
 import Blockquote from "../posts/Blockquote"
+import Image from "../posts/Image"
 import AppStoreBadge from "./badges/AppStoreBadge"
 
 const styles = (theme: Theme) => ({
