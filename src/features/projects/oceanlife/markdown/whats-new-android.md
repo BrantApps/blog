@@ -1,17 +1,22 @@
 # What's New
 
-## v4.0.0
-#### 16 December 2020
-* Dark mode 🌚
-* Revamped look throughout ✨
-* Simplified spot preferences ⚙️
-* Bug fixes 🐛
+## v4.1.0
+#### 30 January 2021
+* Support for many more nearshore buoys in the south of the UK 🇬🇧
+* Bug fixes to make add a spot smoother 🐛
 
 ### Update to the latest release today!
 <AppStoreBadge store="google"/>
 <AppStoreBadge store="amazon"/>
 
 ----
+
+## v4.0.0
+#### 16 December 2020
+* Dark mode 🌚
+* Revamped look throughout ✨
+* Simplified spot preferences ⚙️
+* Bug fixes 🐛
 
 ## v3.7.0
 #### 2 May 2019
