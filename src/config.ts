@@ -7,8 +7,8 @@ const staticConfig = {
   twitterUrl: "https://twitter.com/BrantApps",
   stackoverflowUrl: "https://stackoverflow.com/users/story/1348379",
   mainFeaturedPost: {
-    title: "OceanLife, a love letter 💚",
-    date: "October 2011",
+    title: "OceanLife, a story",
+    date: "October 2021",
     description:
       "Read this multi-part entry on how one of my side projects ended up reaching 10 years old & changing my life...",
     image: "https://source.unsplash.com/weekly?ocean",

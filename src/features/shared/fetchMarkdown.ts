@@ -12,11 +12,11 @@ export function useMarkdownFetcher(
       if (staticConfig.debug) {
         setDocument(debugDocumentPath)
       } else {
-        const legalResponse = await fetch(
+        const postResponse = await fetch(
           `https://raw.githubusercontent.com/BrantApps/blog/master/src/${path}/${id}.md`,
         )
-        if (legalResponse.status === 200) {
-          const text = await legalResponse.text()
+        if (postResponse.status === 200) {
+          const text = await postResponse.text()
           setDocument(text)
         } else {
           setDocument(debugDocumentPath)
