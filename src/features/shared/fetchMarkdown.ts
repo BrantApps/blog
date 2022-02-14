@@ -1,5 +1,8 @@
+import raw from "raw.macro"
 import {useEffect, useState} from "react"
 import staticConfig from "../../config"
+
+const fourofour = raw("./markdown/draft.md")
 
 export function useMarkdownFetcher(
   path: string,
@@ -19,7 +22,7 @@ export function useMarkdownFetcher(
           const text = await postResponse.text()
           setDocument(text)
         } else {
-          setDocument(debugDocumentPath)
+          setDocument(fourofour)
         }
       }
     }
