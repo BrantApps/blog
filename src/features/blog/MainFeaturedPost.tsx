@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
 import Link from "@material-ui/core/Link"
 import {PostSummary} from "./types"
+import {CardActionArea} from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -53,25 +54,30 @@ export default function MainFeaturedPost(props: Props) {
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>
-          <div className={classes.mainFeaturedPostContent}>
-            <Typography
-              component="h1"
-              variant="h3"
-              color="inherit"
-              gutterBottom
-            >
-              {post.title}
-            </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
-            </Typography>
-            <Link
-              variant="subtitle1"
-              href={`${process.env.PUBLIC_URL}${post.path}`}
-            >
-              Continue reading…
-            </Link>
-          </div>
+          <CardActionArea
+            component="a"
+            href={`${process.env.PUBLIC_URL}${post.path}`}
+          >
+            <div className={classes.mainFeaturedPostContent}>
+              <Typography
+                component="h1"
+                variant="h3"
+                color="inherit"
+                gutterBottom
+              >
+                {post.title}
+              </Typography>
+              <Typography variant="h5" color="inherit" paragraph>
+                {post.description}
+              </Typography>
+              <Link
+                variant="subtitle1"
+                href={`${process.env.PUBLIC_URL}${post.path}`}
+              >
+                Continue reading…
+              </Link>
+            </div>
+          </CardActionArea>
         </Grid>
       </Grid>
     </Paper>

@@ -27,8 +27,8 @@
     "typescript": "3.8.3"
   },
   "scripts": {
-    "fix-formatting-all": "./node_modules/.bin/prettier '**/*.js' --write",
-    "fix-formatting": "./node_modules/.bin/prettier $(git status --porcelain | sed 's/^...//' | grep -E '\\.js') --write",
+    "fix-formatting-all": "./node_modules/.bin/prettier '**/*.ts' --write",
+    "fix-formatting": "./node_modules/.bin/prettier $(git status --porcelain | sed 's/^...//' | grep -E '\\.ts') --write",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
