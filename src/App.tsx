@@ -63,6 +63,7 @@ function useDarkMode() {
           main:
             type === "light" ? "#FFFFFF" : defaultTheme.palette.primary.main,
         },
+        divider: type === "light" ? "#FFFFFF" : defaultTheme.palette.divider,
       },
     }
     setTheme(updatedTheme)
@@ -72,7 +73,6 @@ function useDarkMode() {
 }
 
 export default function App() {
-  // const location = useLocation()
   const [theme, toggleDarkMode] = useDarkMode()
 
   const showHeaderAndFooter = document.URL.match("(terms-and-conditions|privacy-policy|whats-new-android)") == null
