@@ -5,7 +5,7 @@ const staticConfig = {
   website: "https://brant.app",
   githubUrl: "https://github.com/BrantApps",
   twitterUrl: "https://twitter.com/BrantApps",
-  stackoverflowUrl: "https://stackoverflow.com/users/story/1348379",
+  stackoverflowUrl: "https://stackoverflow.com/users/1348379",
   mainFeaturedPost: {
     title: "OceanLife, a story",
     date: "October 2021",
