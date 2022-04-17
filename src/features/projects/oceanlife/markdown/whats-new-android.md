@@ -1,6 +1,6 @@
 # What's New
 
-## v4.0.1 (In Review)
+## v4.0.1
 #### 30 January 2021
 * Support for many more nearshore buoys in the south of the UK 🇬🇧
 * Bug fixes to make adding a spot easier 🐛

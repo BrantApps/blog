@@ -35,10 +35,10 @@ export const jobs: Array<Job> = [
   {
     ...candide,
     title: "CTO",
-    responsibilities: "Organization Design, Mentorship, Strategy",
+    responsibilities: "Organisation Design, Product, Strategy",
     skills: [
       {
-        name: "Planning (OKRs)",
+        name: "planning",
         primary: "yes",
       },
       {

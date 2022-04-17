@@ -32,19 +32,19 @@ const secondaryRoutes = [
     title: "OceanLife Privacy Policy",
     component: PrivacyPolicy,
     parentPath: "/oceanlife",
-    path: "/:id",
+    path: "/privacy-policy",
   },
   {
     title: "OceanLife Ts&Cs",
     component: TermsAndConditions,
     parentPath: "/oceanlife",
-    path: "/:id",
+    path: "/terms-and-conditions",
   },
   {
     title: "OceanLife What's New on Android",
     component: WhatsNewAndroid,
     parentPath: "/oceanlife",
-    path: "/:id",
+    path: "/whats-new-android",
   },
 ]
 
