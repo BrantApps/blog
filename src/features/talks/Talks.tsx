@@ -1,7 +1,13 @@
 import React from "react"
 import dayjs from "dayjs"
 import Microlink from "@microlink/react"
-import {CssBaseline, Container, makeStyles, Typography} from "@material-ui/core"
+import {
+  CssBaseline,
+  Container,
+  makeStyles,
+  Typography,
+  useTheme,
+} from "@material-ui/core"
 import VoiceIcon from "@material-ui/icons/RecordVoiceOver"
 import {
   VerticalTimeline,
@@ -10,9 +16,8 @@ import {
 import "react-vertical-timeline-component/style.min.css"
 import {talks} from "./list"
 import {Talk} from "./types"
-import theme from "../../theme"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   toolbarTitle: {
     flex: 1,
   },
@@ -33,6 +38,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Talks() {
   const classes = useStyles()
+  const theme = useTheme()
 
   const sortedTalks = talks.sort((a: Talk, b: Talk) => {
     if (a.date > b.date) {
@@ -51,18 +57,23 @@ export default function Talks() {
       <CssBaseline />
       <Container maxWidth="lg">
         <main>
-          <VerticalTimeline animate={false} lineColor={theme.palette.divider}>
+          <VerticalTimeline
+            animate={false}
+            lineColor={
+              theme.palette.type === "light" ? theme.palette.divider : "#fff"
+            }
+          >
             {sortedTalks.map((talk, index) => (
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                contentStyle={{color: "black"}}
+                contentStyle={{backgroundColor: theme.palette.background.paper}}
                 contentArrowStyle={{
-                  borderRight: "7px solid black",
+                  borderRight: `7px solid ${theme.palette.background.paper}`,
                 }}
                 date={dayjs(talk.date).format("MMMM, YYYY")}
                 iconStyle={{
                   background: theme.palette.primary.dark,
-                  color: "#fff",
+                  color: theme.palette.background.paper,
                 }}
                 icon={<VoiceIcon />}
                 key={talk.date.toISOString() + index}
@@ -93,7 +104,7 @@ export default function Talks() {
                   <Microlink
                     url={talk.video.url}
                     size="large"
-                    style={{marginBottom: 16}}
+                    style={{marginBottom: -16}}
                   />
                 ) : null}
                 <Microlink

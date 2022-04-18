@@ -17,7 +17,11 @@ const theme = createMuiTheme({
     background: {
       default: "#fff",
     },
-    divider: "#000"
+  },
+  typography: {
+    body2: {
+      fontSize: "1.25rem",
+    },
   },
 })
 

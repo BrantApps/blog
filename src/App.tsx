@@ -1,8 +1,8 @@
-import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core"
+import {createMuiTheme, CssBaseline, ThemeProvider} from "@material-ui/core"
 import Box from "@material-ui/core/Box"
 import Container from "@material-ui/core/Container"
-import React, { useState } from "react"
-import { BrowserRouter } from "react-router-dom"
+import React, {useState} from "react"
+import {BrowserRouter} from "react-router-dom"
 import About from "./features/about/About"
 import Blog from "./features/blog/Blog"
 import PrivacyPolicy from "./features/legal/PrivacyPolicy"
@@ -51,9 +51,7 @@ const secondaryRoutes = [
 function useDarkMode() {
   const [theme, setTheme] = useLocalStorage("theme", defaultTheme)
   const toggleDarkMode = () => {
-    const {
-      palette: {type},
-    } = theme
+    const type = theme.palette.type
     const updatedTheme = {
       ...theme,
       palette: {
@@ -63,7 +61,6 @@ function useDarkMode() {
           main:
             type === "light" ? "#FFFFFF" : defaultTheme.palette.primary.main,
         },
-        divider: type === "light" ? "#FFFFFF" : defaultTheme.palette.divider,
       },
     }
     setTheme(updatedTheme)
@@ -73,22 +70,21 @@ function useDarkMode() {
 }
 
 export default function App() {
-  const [theme, toggleDarkMode] = useDarkMode()
+  const [updatedTheme, toggleDarkMode] = useDarkMode()
 
-  const showHeaderAndFooter = document.URL.match("(terms-and-conditions|privacy-policy|whats-new-android)") == null
+  const showHeaderAndFooter =
+    document.URL.match(
+      "(terms-and-conditions|privacy-policy|whats-new-android)",
+    ) == null
   return (
     <ThemeProvider
       theme={createMuiTheme({
+        ...updatedTheme.typography,
+        ...updatedTheme.palette,
         palette: {
-          type: theme.palette.type,
-          primary: theme.palette.primary,
-        },
-        typography: {
-          ...theme.typography,
-          body2: {
-            ...theme.typography.body2,
-            fontSize: "1.25rem",
-          },
+          type: updatedTheme.palette.type,
+          primary: updatedTheme.palette.primary,
+          divider: updatedTheme.palette.divider,
         },
       })}
     >
@@ -96,12 +92,14 @@ export default function App() {
       <Container>
         <Box my={4}>
           <BrowserRouter basename={process.env.PUBLIC_URL}>
-          {showHeaderAndFooter ? <Header
-              title="Branton's Yak"
-              sections={primaryRoutes}
-              appliedPaletteType={theme.palette.type}
-              handleThemeSwitch={toggleDarkMode as () => void}
-            /> : null}
+            {showHeaderAndFooter ? (
+              <Header
+                title="Branton's Yak"
+                sections={primaryRoutes}
+                appliedPaletteType={updatedTheme.palette.type}
+                handleThemeSwitch={toggleDarkMode as () => void}
+              />
+            ) : null}
             <Routes
               primaryRoutes={primaryRoutes.map((section) => ({
                 path: section.path,
@@ -114,7 +112,9 @@ export default function App() {
               }))}
             />
           </BrowserRouter>
-          {showHeaderAndFooter ? <Footer title="Tech, Teams & Tea" description="" /> : null}
+          {showHeaderAndFooter ? (
+            <Footer title="Tech, Teams & Tea" description="" />
+          ) : null}
         </Box>
       </Container>
     </ThemeProvider>
